@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { AuthService } from '../services/auth';
 
@@ -14,7 +15,10 @@ export class Login {
   username = '';
   password = '';
 
-  constructor(private auth: AuthService) {}
+  constructor(
+    private auth: AuthService,
+    private router: Router
+  ) {}
 
   login() {
 
@@ -30,6 +34,8 @@ export class Login {
       console.log('Login correcto');
 
       console.log(res);
+
+      this.router.navigate(['/productos']);
 
     });
 
