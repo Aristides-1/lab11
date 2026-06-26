@@ -1,32 +1,31 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
 import { ProductoService } from '../services/producto';
+import { CommonModule } from '@angular/common'; 
 
 @Component({
   selector: 'app-productos',
+  standalone: true,
   imports: [CommonModule],
   templateUrl: './productos.html',
-  styleUrl: './productos.css',
+  styleUrl: './productos.css'
 })
-export class Productos implements OnInit {
-
-  productos: any[] = [];
+export class ProductosComponent implements OnInit {
+  productos: any[] = []; //Inicializar como arreglo vacío para evitar errores de tipo undefined
 
   constructor(private productoService: ProductoService) {}
 
   ngOnInit(): void {
-
-    this.productoService.obtenerProductos().subscribe(
-      (data: any) => {
-
-        this.productos = data;
-
-        console.log(data);
-
-      }
-    );
-
+    this.cargarProductos();
   }
 
+  cargarProductos() {
+    this.productoService.obtenerProductos().subscribe({
+      next: (res: any) => {
+        this.productos = res; 
+      },
+      error: (err) => {
+        console.error('Error al cargar productos:', err);
+      }
+    });
+  }
 }
