@@ -1,11 +1,9 @@
 <h2>Lista de Productos</h2>
 
 <ul>
-  @for (producto of productos; track producto.id) {
-
+  @for (producto of productos(); track producto.id) {
     <li>
       {{ producto.nombre }} - S/. {{ producto.precio }}
     </li>
-
   }
 </ul>
