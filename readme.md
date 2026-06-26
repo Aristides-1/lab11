@@ -1,5 +1,11 @@
 # 🔐 Laboratorio 11 - Autenticación JWT con Django REST Framework y Angular
 
+# 👨‍🏫 Profesor: Carlo Jose Luis Corrales Delgado
+
+# 📚 Curso: **Desarrollo de Aplicaciones Web**
+
+# 🎥 Video de funcionalidad :  [https://www.youtubeeducation.com/watch?v=txMiHu8rmeo]
+
 ## 📖 Descripción
 
 Este proyecto implementa un sistema de autenticación utilizando **JSON Web Tokens (JWT)** con un backend desarrollado en **Django REST Framework** y un frontend desarrollado en **Angular 22**.
@@ -284,6 +290,4 @@ Durante el desarrollo del laboratorio se implementó:
 
 **Diego Cervantes**
 
-📚 Curso: **Desarrollo de Aplicaciones Web**
-
-🎓 Universidad
+🎓 Universidad Nacional de San Agustín
