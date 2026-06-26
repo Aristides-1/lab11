@@ -1,19 +1,17 @@
-<h2>Login JWT</h2>
+<div class="login-container">
+  <div class="login-card">
+    <h2>Iniciar Sesión</h2>
+    
+    <div class="form-group">
+      <label>Usuario:</label>
+      <input type="text" [(ngModel)]="username" placeholder="Ingresa tu usuario" />
+    </div>
 
-<input
-  type="text"
-  [(ngModel)]="username"
-  placeholder="Usuario">
+    <div class="form-group">
+      <label>Contraseña:</label>
+      <input type="password" [(ngModel)]="password" placeholder="Ingresa tu contraseña" />
+    </div>
 
-<br><br>
-
-<input
-  type="password"
-  [(ngModel)]="password"
-  placeholder="Contraseña">
-
-<br><br>
-
-<button (click)="login()">
-  Iniciar sesión
-</button>
+    <button (click)="login()">Ingresar</button>
+  </div>
+</div>
