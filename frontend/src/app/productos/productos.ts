@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './productos.css'
 })
 export class ProductosComponent implements OnInit {
-  // Convertimos la variable en una Signal
+  //cambiamos a signal
   productos = signal<any[]>([]); 
 
   constructor(private productoService: ProductoService) {}
