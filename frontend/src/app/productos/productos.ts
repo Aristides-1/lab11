@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core'; // <-- Importa signal
 import { ProductoService } from '../services/producto';
-import { CommonModule } from '@angular/common'; 
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-productos',
@@ -10,7 +10,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './productos.css'
 })
 export class ProductosComponent implements OnInit {
-  productos: any[] = []; //Inicializar como arreglo vacío para evitar errores de tipo undefined
+  // Convertimos la variable en una Signal
+  productos = signal<any[]>([]); 
 
   constructor(private productoService: ProductoService) {}
 
@@ -21,7 +22,7 @@ export class ProductosComponent implements OnInit {
   cargarProductos() {
     this.productoService.obtenerProductos().subscribe({
       next: (res: any) => {
-        this.productos = res; 
+        this.productos.set(res); // <--- Así se actualiza una signal en Zoneless
       },
       error: (err) => {
         console.error('Error al cargar productos:', err);
